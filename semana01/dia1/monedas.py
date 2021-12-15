@@ -17,7 +17,7 @@ while(tipocambio == 0):
     else:
         print("No selecciono una moneda valida")
 #PROCESO
-montoFinal = float(montoInicial) * tipocambio
+montoFinal = montoInicial * tipocambio
 #DATOS DE SALIDA
 print("El monto de "+ montoInicialFormato + " es igual al dia de hoy a" + str(locale.currency(montoFinal)))
 print("===== TIPO DE CAMBIO DE LOS ULTIMOS 4 DIAS ===")
