@@ -1,0 +1,3 @@
+carlos perez,carlos@gmail.com,3737373
+juan torres,jose@gmail.com,233223
+cesar mayta,cesar@gmail.com,232232

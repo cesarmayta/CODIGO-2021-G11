@@ -8,6 +8,31 @@ def menu():
     print("[4] ELIMINAR ALUMNO")
     print("[5] SALIR DEL PROGRAMA")
 
+def cargarAlumnos(strAlumnos):
+    alumnos = []
+    lstAlumnos = strAlumnos.splitlines()
+    for l in lstAlumnos:
+        alumnoData = l.split(';')
+        dictAlumno = {
+            'nombre':alumnoData[0],
+            'email':alumnoData[1],
+            'celular':alumnoData[2]
+        }
+        alumnos.append(dictAlumno)
+    return alumnos
+        
+def grabarAlumnos(alumnos):
+    strAlumnos = ""
+    c = 1
+    for l in alumnos:
+        if(c>1):
+            strAlumnos += "\n"
+        for clave,valor in l.items():
+            strAlumnos += valor
+            if clave != 'celular':
+                strAlumnos += ';'
+        c += 1
+    return strAlumnos
     
 def registrarAlumno(alumnos):
     #REGISTRAR ALUMNO

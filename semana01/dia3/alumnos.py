@@ -1,14 +1,19 @@
 #PROGRAMA PARA CRUD DE ALUMNOS
 from libAlumnos import *
-from sistema.libCursos import *
+import os
 #ENTRADA
 opcion = 0
-alumnos = [{'nombre':'cesar mayta','email':'cesarmayta@gmail.com','celular':'956290589'}]
+alumnos = []
+
+if(os.path.isfile('alumnos.csv')):
+    f = open('alumnos.csv','r')
+    strAlumnos = f.read()
+    alumnos = cargarAlumnos(strAlumnos)
+    f.close()
 
 print("================================")
 print("   PROGRAMA DE ALUMNOS CODIGO   ")
 print("================================")
-mostrarCurso()
 while(opcion != 5):
     menu()
     opcion = int(input("INGRESE OPCIÓN :"))
@@ -42,6 +47,10 @@ while(opcion != 5):
         print("==================================")
         print("    GRACIAS POR USAR MI PROGRAMA   ")
         print("==================================")
+        strAlumnos = grabarAlumnos(alumnos)
+        fw = open('alumnos.csv','w')
+        fw.write(strAlumnos)
+        fw.close()
     else:
         #OPCION INCORRECTA
         print("==================================")
