@@ -2,6 +2,8 @@ import tkinter as tk
 import tkinter.font as tkFont
 from tkinter import messagebox
 import mysql.connector
+import psutil
+import platform
 
 mydb = mysql.connector.connect(
     host="btcb8knq37mi7aulkk2j-mysql.services.clever-cloud.com",
@@ -19,9 +21,16 @@ class App:
         #resultado = mycursor.fetchall()
         #return resultado
     
+    def get_size(self,bytes, suffix="B"):
+        factor = 1024
+        for unit in ["", "K", "M", "G", "T", "P"]:
+            if bytes < factor:
+                return f"{bytes:.2f}{unit}{suffix}"
+            bytes /= factor
+    
     def __init__(self, root):
         #setting title
-        root.title("undefined")
+        root.title("pc")
         #setting window size
         width=395
         height=273
@@ -39,6 +48,8 @@ class App:
         GLabel_959["text"] = "Sistema Operativo :"
         GLabel_959.place(x=20,y=30,width=130,height=33)
 
+        
+        
         GLineEdit_534=tk.Entry(root)
         GLineEdit_534["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
@@ -48,6 +59,8 @@ class App:
         GLineEdit_534["text"] = ""
         GLineEdit_534.place(x=150,y=30,width=227,height=30)
     
+        
+        
         GLabel_942=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
         GLabel_942["font"] = ft
@@ -95,7 +108,19 @@ class App:
         self.sistema = GLineEdit_534
         self.procesador = GLineEdit_230
         self.memoria = GLineEdit_55
+        
+        #capturamos valores de los sistemas
+        uname = platform.uname()
+        self.sistemaop = uname.system + ' ' + uname.release
+        self.svmem = psutil.virtual_memory()
+        print(self.svmem)
+        
+        self.procesador.insert(0,uname.processor)
+        self.sistema.insert(0,self.sistemaop)
+        self.memoria.insert(0,self.get_size(self.svmem.total))
 
+    
+        
     def GButton_974_command(self):
         sqlInsertar = "insert into computadoras(sistema,procesador,memoria) values(%s,%s,%s)"
         parametros = (self.sistema.get(),self.procesador.get(),self.memoria.get())
