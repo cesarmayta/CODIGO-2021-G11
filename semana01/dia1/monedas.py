@@ -18,8 +18,9 @@ while(tipocambio == 0):
         print("No selecciono una moneda valida")
 #PROCESO
 montoFinal = montoInicial * tipocambio
+montoFinalFormato = "S./ {:,.2f}".format(montoFinal)
 #DATOS DE SALIDA
-print("El monto de "+ montoInicialFormato + " es igual al dia de hoy a" + str(locale.currency(montoFinal)))
+print("El monto de "+ montoInicialFormato + " es igual al dia de hoy a " + montoFinalFormato)
 print("===== TIPO DE CAMBIO DE LOS ULTIMOS 4 DIAS ===")
 for c in cambioDolar:
     print("a tipo de cambio : " + str(c) + " el monto es : " + str(montoInicial * c)) 

@@ -13,6 +13,7 @@ if(url.status_code == 200):
             moneda = fila.find('td',{'class':'APLI_fila3'})
             compra = fila.find('td',{'class':'APLI_fila2'})
             venta = fila.find('td',{'class':'APLI_fila2'}).findNext('td')
+            #print(moneda)
             dicTipoCambio = {
                 'moneda':moneda.get_text(),
                 'compra':compra.get_text(),
