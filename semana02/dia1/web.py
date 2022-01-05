@@ -10,7 +10,7 @@ def index():
 @app.route('/saludo')
 def saludo():
     nombre = request.args.get('nombre','no hay nombre')
-    return 'Hola {}'.format(nombre)
+    return '<center><b>Hola {}</b></center>'.format(nombre)
 
 @app.route('/suma')
 def suma():
