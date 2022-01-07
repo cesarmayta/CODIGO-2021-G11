@@ -1,0 +1,4 @@
+#pyrebase : para integrar python fon firebase
+pyrebase4
+#flask : para implementar web con python utilizamos el microframework flask
+Flask
