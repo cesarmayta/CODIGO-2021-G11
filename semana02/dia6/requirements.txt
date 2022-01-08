@@ -1,0 +1,10 @@
+#FLASK : Microframework web
+Flask
+#FLASK-SQLALCHEMY : ORM para manipular bases de datos relacionales
+Flask-SQLAlchemy
+#flask-marshmallow : sirve para crear modelos del orm y serializarlos
+flask-marshmallow
+#marshmallow-sqlalchemy : integra marshmallow con sqlalchemy
+marshmallow-sqlalchemy
+#mysqlclient : libreria para conectar mysql con python
+mysqlclient
