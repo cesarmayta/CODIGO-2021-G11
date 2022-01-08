@@ -2,9 +2,11 @@
 from flask import Flask,jsonify,request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
 #configuramos el acceso a la base de datos mysql en clever cloud con sqlalchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://upqr8rnbnljoiewy:strVWAQKvYE91tDlJycp@btvvnpxnagxcl8c2mk3b-mysql.services.clever-cloud.com:3306/btvvnpxnagxcl8c2mk3b'
@@ -43,6 +45,7 @@ def index():
                     }
                    )
     
+#METODO POST PARA REGISTRAR NUEVOS ALUMNOS
 @app.route('/alumno',methods=['POST'])
 def alumno():
     #capturamos los valores
@@ -55,6 +58,45 @@ def alumno():
     db.session.commit()
     
     return alumno_schema.jsonify(nuevoAlumno)
+
+#METODO GET PARA CONSULTAR LOS ALUMNOS
+alumnos_schema = AlumnosSchema(many=True)
+@app.route('/alumnos')
+def alumnos():
+    lstAlumnos = Alumno.query.all()
+    dataAlumnos = alumnos_schema.dump(lstAlumnos)
+    return jsonify(dataAlumnos)
+
+#METODO PUT PARA ACTUALIZAR ALUMNOS
+@app.route('/updalumno/<id>',methods=['PUT'])
+def updateAlumno(id):
+    alumno = Alumno.query.get(id)
+    print(alumno)
+    nombre = request.json['nombre']
+    email = request.json['email']
+    #ACTUALIZAMOS EL ALUMNOS
+    alumno.nombre = nombre
+    alumno.email = email
+    
+    db.session.commit()
+    
+    return alumno_schema.jsonify(alumno)
+
+#METODO DELETE PARA ELIMINAR ALUMNOS
+@app.route('/delAlumno/<id>',methods=['DELETE'])
+def deleteAlumno(id):
+    alumno = Alumno.query.get(id)
+    #ELIMINAMOS EL ALUMNO
+    db.session.delete(alumno)
+    db.session.commit()
+    
+    return alumno_schema.jsonify(alumno)
+
+@app.route('/alumno/<id>')
+def getAlumno(id):
+    alumno = Alumno.query.get(id)
+    return alumno_schema.jsonify(alumno)
+    
 
 if __name__ == "__main__":
     app.run(debug=True,port=5000)
