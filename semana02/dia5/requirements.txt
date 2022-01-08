@@ -1,0 +1,10 @@
+#pyrebase : para integrar python fon firebase
+pyrebase4
+#flask : para implementar web con python utilizamos el microframework flask
+Flask
+#flask-bootstrap : permite integrar flask con bootstrap
+flask-bootstrap
+#Flask-WTF : permite trabajar con formularios en flask
+Flask-WTF
+#python-dotenv : sirve para poder utilizar variables de entorno
+python-dotenv
