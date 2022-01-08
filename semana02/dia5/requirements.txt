@@ -8,3 +8,5 @@ flask-bootstrap
 Flask-WTF
 #python-dotenv : sirve para poder utilizar variables de entorno
 python-dotenv
+#firebase-admin : sirve para poder trabajar con firestore
+firebase-admin
