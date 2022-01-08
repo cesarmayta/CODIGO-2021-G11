@@ -10,15 +10,14 @@ config = {
   "appId": "1:180035497662:web:5774ca5a911599db1cb8ef",
   "measurementId": "G-4CBM3K6ZM6"
 }
-
 firebase = pyrebase.initialize_app(config)
-
-#ejemplo con auth
 auth = firebase.auth()
+
+
 try:
     usuario = auth.sign_in_with_email_and_password('jorge@gmail.com','123456')
     print(auth.get_account_info(usuario['idToken']))
-    auth.delete_user_account(usuario['idToken'])
+    #auth.delete_user_account(usuario['idToken'])
 except:
     print("usuario o password invalidos")
     
