@@ -4,12 +4,19 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
 
+from dotenv import load_dotenv
+import os
+from os.path import join,dirname
+
+dotenv_path = join(dirname(__file__),'.env')
+load_dotenv(dotenv_path)
+
 
 app = Flask(__name__)
 CORS(app)
 
 #configuramos el acceso a la base de datos mysql en clever cloud con sqlalchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://upqr8rnbnljoiewy:strVWAQKvYE91tDlJycp@btvvnpxnagxcl8c2mk3b-mysql.services.clever-cloud.com:3306/btvvnpxnagxcl8c2mk3b'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URI")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)

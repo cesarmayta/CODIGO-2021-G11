@@ -12,3 +12,5 @@ mysqlclient
 gunicorn
 #flask-cors : para permitir acceso de otros servidores
 flask-cors
+#python-dotenv : para variables de entorno en python
+python-dotenv
