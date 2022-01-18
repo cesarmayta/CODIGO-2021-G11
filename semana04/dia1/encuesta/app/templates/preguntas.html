@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Preguntas</h1>
+    <ol>
+        {%for pregunta in preguntas %}
+            <li><b>{{ pregunta.nombre }}</b>
+                <ul>
+                    {% for opcion in pregunta.opcion_set.all %}
+                        <li><input type="checkbox" value="{{ opcion.id }}">{{opcion.nombre}}</input></li>
+                    {% endfor %}
+                </ul>
+            
+            </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

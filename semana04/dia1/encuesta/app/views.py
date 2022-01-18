@@ -1,6 +1,16 @@
 from django.shortcuts import render
 
+from .models import Pregunta,Opcion
+
 # Create your views here.
+def preguntas(request):
+    listaPreguntas = Pregunta.objects.all()
+    context = {
+        'preguntas':listaPreguntas
+    }
+    
+    return render(request,'preguntas.html',context)
+
 def index(request):
     titulo = 'ENCUESTA A ALUMNOS DE CODIGO'
     context = {
