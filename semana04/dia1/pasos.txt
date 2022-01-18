@@ -1,0 +1,12 @@
+1 - creamos el entorno virtual e instalamos django
+python -m venv venv
+source venv/Scripts/activate
+pip install django
+
+2 - creamos un proyecto llamado encuesta
+django-admin startproject encuesta
+
+3 - desplegamos el proyecto
+cd encuesta
+python manage.py runserver
+
