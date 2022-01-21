@@ -40,7 +40,7 @@
                 <p class="prod-price">${{ producto.precio }}</p>
                 <p class="prod-excerpt">{{ producto.nombre }}</p>
                 <div class="prod-add">
-                    <button type="submit" class="button"><i class="icon ion-android-cart"></i> Agregar al Carrito</button>
+                    <a href="{% url 'tienda:agregarCarrito' producto.id %}" class="icon ion-android-cart">Agregar al Carrito</a>
                     <p class="qnt-wrap prod-li-qnt">
                         <a href="#" class="qnt-plus prod-li-plus"><i class="icon ion-arrow-up-b"></i></a>
                         <input type="text" value="1">
