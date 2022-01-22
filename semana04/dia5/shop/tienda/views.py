@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import login,logout,authenticate
 
-from .models import Categoria,Producto,Cliente
+from .models import Categoria,Producto,Cliente,Pedido,PedidoDetalle
 from django.contrib.auth.models import User
 
 from tienda.carrito import Cart
@@ -105,6 +105,89 @@ def crearUsuario(request):
         nuevoUsuario = User.objects.create_user(username=dataUsuario,password=dataPassword)
         login(request,nuevoUsuario)
         return redirect('/cuenta')
+    
+def actualizarCliente(request):
+    mensaje =  ""
+    if request.method == 'POST':
+        frmCliente = ClienteForm(request.POST)
+        if frmCliente.is_valid():
+           #ACTUALIZAMOS EL USUARIO Y CLIENTE
+           dataCliente = frmCliente.cleaned_data
+           print(dataCliente)
+           
+           #ACTUALIZAMOS USUARIO
+           actUsuario = User.objects.get(pk=request.user.id)
+           actUsuario.first_name = dataCliente["nombre"]
+           actUsuario.last_name = dataCliente["apellidos"]
+           actUsuario.email = dataCliente["email"]
+           actUsuario.save()
+           
+           try:
+                actCliente = Cliente.objects.get(usuario = request.user)
+                actCliente.direccion = dataCliente["direccion"]
+                actCliente.telefono = dataCliente["telefono"]
+                actCliente.save()
+           except:
+                nuevoCliente = Cliente()
+                nuevoCliente.usuario = actUsuario
+                nuevoCliente.direccion = dataCliente["direccion"]
+                nuevoCliente.telefono = dataCliente["telefono"]
+                nuevoCliente.save()
+           
+           mensaje =  "DATOS ACTUALIZADOS"
+        else:
+           mensaje = "ERROR AL ACTUALIZAR LOS DATOS"
+    context = {
+            'mensaje':mensaje,
+            'frmCliente':frmCliente
+        }
+    return render(request,'cuenta.html',context)
+        
+def logoutUsuario(request):
+    logout(request)
+    return render(request,'login.html')
 
 
 ###################################################
+######### PEDIDOS #################
+def registrarPedido(request):
+    if request.user.id is not None:
+        #REGISTRA EL PEDIDO
+        clientePedido = Cliente.objects.get(usuario=request.user)
+        nuevoPedido = Pedido()
+        nuevoPedido.cliente = clientePedido
+        nuevoPedido.save()
+        
+        #REGISTRAMOS EL DETALLE DEL PEDIDO
+        carritoPedido = request.session.get("cart")
+        for key,value in carritoPedido.items():
+            
+            productoPedido = Producto.objects.get(pk=value["producto_id"])
+            
+            nuevoPedidoDetalle = PedidoDetalle()
+            nuevoPedidoDetalle.pedido = nuevoPedido
+            nuevoPedidoDetalle.producto = productoPedido
+            nuevoPedidoDetalle.cantidad = int(value["cantidad"])
+            nuevoPedidoDetalle.save()
+        
+        carrito = Cart(request)
+        carrito.clear()
+        return redirect('/pedidos')
+    else:
+        return redirect('/login')
+    
+def pedidos(request):
+    context = {}
+    if request.user.id is not None:
+        #retorna los pedidos del cliente logueado
+        clienteFiltro = Cliente.objects.get(usuario=request.user) 
+        listaPedidos = Pedido.objects.filter(cliente=clienteFiltro)
+        context = {
+            'pedidos':listaPedidos
+        }
+    else:
+        return redirect('/login')
+    
+    return render(request,'pedidos.html',context)
+    
+###################################

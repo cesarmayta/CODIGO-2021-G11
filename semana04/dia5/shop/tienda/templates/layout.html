@@ -104,10 +104,13 @@
         <nav id="h-menu" class="h-menu">
             <ul>
                 <li>
-                    <a href="elements.html">LOGIN</a>
+                    <a href="{% url 'tienda:loginUsuario' %}">LOGIN</a>
                 </li>
                 <li>
-                    <a href="elements.html">CARRITO</a>
+                    <a href="{% url 'tienda:logoutUsuario' %}">LOGOUT</a>
+                </li>
+                <li>
+                    <a href="{% url 'tienda:carrito' %}">CARRITO</a>
                 </li>
                 
             </ul>

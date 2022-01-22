@@ -29,4 +29,17 @@ class Cliente(models.Model):
         return self.telefono
     
 
+class Pedido(models.Model):
+    cliente = models.ForeignKey(Cliente,on_delete=models.RESTRICT)
+    fecha_reg = models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return str(self.fecha_reg)
+    
+class PedidoDetalle(models.Model):
+    pedido = models.ForeignKey(Pedido,on_delete=models.RESTRICT)
+    producto = models.ForeignKey(Producto,on_delete= models.RESTRICT)
+    cantidad = models.IntegerField(default=1)
+    
+    def __str__(self):
+        return self.producto.nombre
