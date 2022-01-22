@@ -7,10 +7,10 @@
         <article class="page-cont">
         <div class="page-styling">
             <div class="auth-wrap">
-                <div class="auth-col">
-                    <h2>Pedidos</h2>
+                    {% for pedido in pedidos %}
+                    <h3>Pedido Nro : {{ pedido.id }} - FECHA : {{ pedido.fecha_reg }}</h3>
                     <div class="woocommerce prod-litems section-list">
-                        {% for pd in pedidos.pedidodetalle_set.all %}
+                        {% for pd in pedido.pedidodetalle_set.all %}
                         <article class="prod-li sectls">
                             <div class="prod-li-inner">
                                 <a href="product.html" class="prod-li-img">
@@ -19,9 +19,9 @@
                                 <div class="prod-li-cont">
                                     <div class="prod-li-ttl-wrap">
                                         <p>
-                                            <a href="#">CATEGORIA</a>
+                                            <a href="#">{{ pd.producto.categoria.nombre }}</a>
                                         </p>
-                                        <h3><a href="product.html">{{ pd.producto.categoria.nombre }}</a></h3>
+                                        <h3><a href="product.html">{{ pd.producto.nombre }}</a></h3>
                                     </div><!--
                                     No Space
                                 --><div class="prod-li-prices">
@@ -36,18 +36,13 @@
                                                 <a href="#" class="qnt-minus prod-li-minus"><i class="icon ion-arrow-down-b"></i></a>
                                             </p>
                                         </div>
-                                        <div class="prod-li-total-wrap">
-                                            <p>Total</p>
-                                            <p class="prod-li-total">$</p>
-                                        </div>
                                     </div><!--
                                     No Space
                                     --></div>
                                 </div>
                         </article>
                         {% endfor %}
-                    
-                </div>
+                        {% endfor %}
             </div>
         </div>
     </article>
