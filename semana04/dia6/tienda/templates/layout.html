@@ -1,0 +1,239 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>MULTISHOP</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900%7COpen+Sans:300,300i,400,400i,600,600i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.formstyler.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ion.rangeSlider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.mThumbnailScroller.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chosen.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements-media.css' %}">
+
+</head>
+<body>
+<div id="page" class="site">
+
+
+    <div class="container-fluid page-styling site-header-before">
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="links_list links_list-align-left align-center-desktop topbar-social">
+                    <li>
+                        <p class="links_list-value">
+                            <a href="http://facebook.com" target="_blank" rel="nofollow">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="links_list-value">
+                            <a href="mailto:email@email.com" target="_blank" rel="nofollow">
+                                <i class="fa fa-paper-plane"></i>
+                            </a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-8">
+                <ul class="links_list links_list-align-right align-center-desktop topbar-contacts">
+                    <li>
+                        <p class="links_list-label">
+                           Dirección
+                        </p>
+                        <p class="links_list-value">
+                            <a href="http://maps.google.com" target="_blank" rel="nofollow">Calle normal 123, Perú</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="links_list-label">
+                            Contactos
+                        </p>
+                        <p class="links_list-value">
+                            <a href="mailto:support@email.com">fashionstore@gmail.com</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="links_list-label">
+                            Telefono
+                        </p>
+                        <p class="links_list-value">
+                            <a href="tel:4785929899">(478)-592-9899</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="site-header">
+
+        <p class="h-logo">
+            <a href="{% url 'tienda:index' %}"><img src="{% static 'img/logo.png' %}" alt="MultiShop"></a>
+        </p><!--
+    No Space
+    --><div class="h-shop">
+
+        <form method="get" action="#" class="h-search" id="h-search">
+            <input type="text" placeholder="Search...">
+            <button type="submit"><i class="ion-search"></i></button>
+        </form>
+
+    </div><!--
+    No Space
+    --><div class="mainmenu">
+
+        <nav id="h-menu" class="h-menu">
+            <ul>
+                <li>
+                    <a href="{% url 'tienda:loginUsuario' %}">LOGIN</a>
+                </li>
+                <li>
+                    <a href="{% url 'tienda:pedidos' %}">PEDIDOS</a>
+                </li>
+                <li>
+                    <a href="{% url 'tienda:logoutUsuario' %}">LOGOUT</a>
+                </li>
+                <li>
+                    <a href="{% url 'tienda:carrito' %}">CARRITO</a>
+                </li>
+                
+            </ul>
+        </nav>
+
+    </div><!--
+    No Space
+--></div>
+
+
+    <div id="content" class="site-content">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main">
+                <div class="cont maincont">
+                    <!-- To make Sidebar "Not Sticky" just remove  id="section-list-withsb" -->
+                    {%block content %}
+                    {% endblock %}
+                </div>
+            </main><!-- #main -->
+        </div><!-- #primary -->
+
+    </div><!-- #content -->
+
+    <div class="container-fluid blog-sb-widgets page-styling site-footer">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 widget align-center-tablet f-logo-wrap">
+                <a href="index.html" class="f-logo">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <p>DEMO DE TIENDA ONLINE CON DJANGO</p>
+                <button class="btn callback">CONTRATAME</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-validate modal-form" id="modal-form">
+        <form action="#" method="POST" class="form-validate">
+            <h4>Contact Us</h4>
+            <input type="text" placeholder="Your name" data-required="text" name="name">
+            <input type="text" placeholder="Your phone" data-required="text" name="phone">
+            <input type="text" placeholder="Your email" data-required="text" data-required-email="email" name="email">
+            <input class="btn1" type="submit" value="Send">
+        </form>
+    </div>
+
+    <div class="cont maincont quick-view-modal">
+        <article>
+            <div class="prod">
+                <div class="prod-slider-wrap prod-slider-shown">
+                    <div class="flexslider prod-slider" id="prod-slider">
+                        <ul class="slides">
+                            <li>
+                                <a data-fancybox-group="prod" class="fancy-img" href="http://placehold.it/1000x1000">
+                                    <img src="http://placehold.it/550x550" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a data-fancybox-group="prod" class="fancy-img" href="http://placehold.it/1000x1000">
+                                    <img src="http://placehold.it/550x550" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a data-fancybox-group="prod" class="fancy-img" href="http://placehold.it/1000x1000">
+                                    <img  src="http://placehold.it/550x550" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="prod-slider-count"><p><span class="count-cur">1</span> / <span class="count-all">3</span></p><p class="hover-label prod-slider-zoom"><i class="icon ion-search"></i><span>Zoom In</span></p></div>
+                    </div>
+                    <div class="flexslider prod-thumbs" id="prod-thumbs">
+                        <ul class="slides">
+                            <li>
+                                <img src="http://placehold.it/550x550" alt="">
+                            </li>
+                            <li>
+                                <img src="http://placehold.it/550x550" alt="">
+                            </li>
+                            <li>
+                                <img src="http://placehold.it/550x550" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="prod-cont">
+                    <div class="prod-rating-wrap">
+                        <p data-rating="4" class="prod-rating">
+                            <i class="rating-ico" title="1"></i><i class="rating-ico" title="2"></i><i class="rating-ico" title="3"></i><i class="rating-ico" title="4"></i><i class="rating-ico" title="5"></i>
+                        </p>
+                        <p class="prod-rating-count">7</p>
+                    </div>
+                    <p class="prod-categs"><a href="#">Lighting</a>, <a href="#">Tools</a></p>
+                    <h2>Belt Sanders</h2>
+                    <p class="prod-price">$25.00</p>
+                    <p class="stock in-stock">7 in stock</p>
+                    <p class="prod-excerpt">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget...</p>
+                    <div class="prod-add">
+                        <button type="submit"
+                                class="button"><i class="icon ion-android-cart"></i> Add to cart
+                        </button>
+                        <p class="qnt-wrap prod-li-qnt">
+                            <a href="#" class="qnt-plus prod-li-plus"><i class="icon ion-arrow-up-b"></i></a>
+                            <input type="text" value="1">
+                            <a href="#" class="qnt-minus prod-li-minus"><i class="icon ion-arrow-down-b"></i></a>
+                        </p>
+                        <div class="prod-li-favorites">
+                            <a href="wishlist.html" class="hover-label add_to_wishlist"><i class="icon ion-heart"></i><span>Add to Wishlist</span></a>
+                        </div>
+                        <p class="prod-li-compare">
+                            <a href="compare.html" class="hover-label prod-li-compare-btn"><span>Compare</span><i class="icon ion-arrow-swap"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div><!-- #page -->
+
+<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/jquery-plugins.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

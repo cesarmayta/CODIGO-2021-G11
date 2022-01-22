@@ -1,0 +1,9 @@
+django==3.2
+Pillow
+#para instalacion en heroku
+dj-database-url
+pyscopg2
+python-decouple
+gunicorn
+whitenoise
+cloudinary
