@@ -1,4 +1,24 @@
 {% extends 'layout.html' %}
 {% block content %}
-    BIENVENIDO :{{ request.user.first_name }} {{ request.user.last_name}}
+<main id="main" class="site-main">
+    <div class="cont maincont">
+        <h1 class="maincont-ttl">Cuenta de Cliente</h1>
+        <article class="page-cont">
+        <div class="page-styling">
+            <div class="auth-wrap">
+                <div class="auth-col">
+                    <h2>Datos de Cliente</h2>
+                    <form method="post" action="{% url 'tienda:crearUsuario' %}" class="register">
+                        {% csrf_token %}
+                        {{ frmCliente.as_p }}
+                        <p class="auth-submit">
+                            <input type="submit" value="Registro">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </article>
+    </div>
+</main>
 {% endblock %}

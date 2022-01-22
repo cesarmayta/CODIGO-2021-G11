@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import login,logout,authenticate
 
-from .models import Categoria,Producto
+from .models import Categoria,Producto,Cliente
 from django.contrib.auth.models import User
 
 from tienda.carrito import Cart
+from tienda.forms import ClienteForm
 
 
 # Create your views here.
@@ -75,7 +76,26 @@ def loginUsuario(request):
     return render(request,'login.html',context)
 
 def cuentaUsuario(request):
-    return render(request,'cuenta.html')
+    try:
+        clienteEditar = Cliente.objects.get(usuario = request.user)
+        dataCliente = {'nombre':request.user.first_name,
+                    'apellidos':request.user.last_name,
+                    'email':request.user.email,
+                    'direccion':clienteEditar.direccion,
+                    'telefono':clienteEditar.telefono,
+                    'usuario':request.user.username}
+    except:
+        dataCliente = {'nombre':request.user.first_name,
+                    'apellidos':request.user.last_name,
+                    'email':request.user.email,
+                    'usuario':request.user.username}
+    
+    frmCliente = ClienteForm(dataCliente)
+    
+    context = {
+        'frmCliente':frmCliente
+    }
+    return render(request,'cuenta.html',context)
 
 def crearUsuario(request):
     if request.method == 'POST':
