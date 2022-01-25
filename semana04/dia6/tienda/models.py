@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from cloudinary.models import CloudinaryField
+
+
 # Create your models here.
 class Categoria(models.Model):
     nombre = models.CharField(max_length=200)
@@ -15,7 +18,8 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=9,decimal_places=2)
     stock = models.IntegerField(default=0)
     pub_date = models.DateTimeField('fecha registro')
-    imagen = models.ImageField(upload_to='productos',blank=True,null=True)
+    #imagen = models.ImageField(upload_to='productos',blank=True,null=True)
+    imagen = CloudinaryField('image',default='')
     
     def __str__(self):
         return self.nombre

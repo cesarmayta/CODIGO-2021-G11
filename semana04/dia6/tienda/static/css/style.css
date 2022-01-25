@@ -2365,7 +2365,7 @@ body .widget_search .dgwt-wcas-si img {
 	background-position: center center;
 	-webkit-background-size: cover;
 	background-size: cover;
-	background-image: url(../img/1/front/hero2.jpg);
+	background-image: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/added_dgnnvt.png);
 }
 .heroblock2 .heroblock2-ttl {
 	line-height: 1.2;
@@ -3139,7 +3139,7 @@ p.link-pages,
 	height: 15px;
 	display: block;
 	overflow: hidden;
-	background: url(../img/chk1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/chk1_qycphg.png) no-repeat left top;
 	top: 3px;
 	left: 0;
 }
@@ -3180,7 +3180,7 @@ p.link-pages,
 	height: 14px;
 	display: block;
 	overflow: hidden;
-	background: url(../img/radio1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/radio1_ofvvkn.png) no-repeat left top;
 	top: 4px;
 	left: 0;
 }
@@ -3230,7 +3230,7 @@ p.link-pages,
 	width: 17px;
 	height: 17px;
 	margin: -8px 0 0;
-	background: url(../img/remove1.png) no-repeat center center;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/remove1_pr8ju2.png) no-repeat center center;
 	-o-background-size: auto auto;
 	-moz-background-size: auto auto;
 	-webkit-background-size: auto auto;
@@ -3274,7 +3274,7 @@ p.link-pages,
 .section-filter .chosen-container-single .chosen-single div {
 	position: absolute;
 	content: '';
-	background: url(../img/arr1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/arr1_q6rikc.png) no-repeat left top;
 	display: block;
 	width: 14px;
 	height: 8px;
@@ -3369,7 +3369,7 @@ p.link-pages,
 .section-filter .chosen-container-multi .chosen-choices:after {
 	position: absolute;
 	content: '';
-	background: url(../img/arr1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/arr1_q6rikc.png) no-repeat left top;
 	display: block;
 	width: 14px;
 	height: 8px;
@@ -3384,7 +3384,7 @@ p.link-pages,
 .section-filter .chosen-container-multi .chosen-choices li.search-choice {
 	font-size: 13px;
 	color: #fff;
-	background: url(../img/remove1.png) no-repeat center center;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/remove1_pr8ju2.png) no-repeat center center;
 	background-color: #c0c5d9;
 	border-radius: 20px;
 	background-image: none;
@@ -3404,10 +3404,10 @@ p.link-pages,
 	margin: -9px 0 0;
 	right: 8px;
 	border-radius: 16px;
-	background: url(../img/remove1.png) no-repeat center center;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/remove1_pr8ju2.png) no-repeat center center;
 }
 .section-filter .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
-	background: url(../img/remove1.png) no-repeat center center;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/remove1_pr8ju2.png) no-repeat center center;
 	background-color: #6bc67c;
 }
 .section-filter .woof .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
@@ -3680,7 +3680,7 @@ p.link-pages,
 .section-filter .irs-bar,
 .section-filter .irs-bar-edge,
 .section-filter .irs-slider {
-	background-image: url(../img/sprite-skin-flat.png);
+	background-image: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/sprite-skin-flat_ojcxno.png);
 	background-repeat: repeat-x;
 }
 .section-filter .irs-slider {
@@ -3753,7 +3753,7 @@ div.woof_info_popup {
 }
 .maincont .section-filter-toggle a:after {
 	content: '';
-	background: url(../img/arr1.png) no-repeat left bottom;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/arr1_q6rikc.png) no-repeat left bottom;
 	display: inline-block;
 	width: 14px;
 	height: 8px;
@@ -3784,7 +3784,7 @@ div.woof_info_popup {
 .section-filter .woof_show_auto_form:after,
 .section-filter .woof_hide_auto_form:after {
 	content: '';
-	background: url(../img/arr1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/arr1_q6rikc.png) no-repeat left top;
 	display: inline-block;
 	width: 14px;
 	height: 8px;
@@ -3792,7 +3792,7 @@ div.woof_info_popup {
 	margin: 0 15px 0 15px;
 }
 .section-filter .woof_hide_auto_form:after {
-	background: url(../img/arr1.png) no-repeat left bottom;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/arr1_q6rikc.png) no-repeat left bottom;
 }
 .section-filter .woof_show_auto_form:before {
 	display: inline-block;
@@ -4160,7 +4160,7 @@ div.woof_info_popup {
 	width: 16px;
 	height: 14px;
 	content: '';
-	background: url(../img/added.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/added_dgnnvt.png) no-repeat left top;
 }
 .woocommerce #respond input#submit.loading::after,
 .woocommerce a.button.loading::after,
@@ -4894,7 +4894,7 @@ span.badge-1 {
 	margin-left: .53em;
 	height: 14px;
 	content: '';
-	background: url(../img/added.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/added_dgnnvt.png) no-repeat left top;
 }
 
 .prod-litems .prod-li .prod-li-information,
@@ -4993,7 +4993,7 @@ span.badge-1 {
 	width: 16px;
 	height: 14px;
 	content: '';
-	background: url(../img/added.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/added_dgnnvt.png) no-repeat left top;
 }
 .prod-litems .prod-li .prod-i-cart .added_to_cart {
 	display: none;
@@ -6789,7 +6789,7 @@ body div.prod .prod-add .button .icon {
 	width: 16px;
 	height: 14px;
 	content: '';
-	background: url(../img/added.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/added_dgnnvt.png) no-repeat left top;
 }
 .prod .prod-li-favorites .feedback {
 	display: none;
@@ -6801,7 +6801,7 @@ body div.prod .prod-add .button .icon {
 }
 .fancybox-close.modal-form-close2 {
 	background-image: none;
-	background: url(../img/close4.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077504/cesarmaytashop/close4_jvrgzp.png) no-repeat left top;
 	width: 16px;
 	height: 16px;
 	top: 0;
@@ -7494,7 +7494,7 @@ div.product.product-type-grouped .prod-add form.cart > .single_add_to_cart_butto
 	color: #6bc67c;
 }
 .prod-litems.cart-list .prod-li-add a:after {
-	background: url(../img/remove.png) no-repeat top left;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/remove_btsyub.png) no-repeat top left;
 }
 .prod-litems.cart-list .prod-li-add a:hover:after {
 	background-position: top left;
@@ -7509,7 +7509,7 @@ div.product.product-type-grouped .prod-add form.cart > .single_add_to_cart_butto
 	color: #6bc67c;
 }
 .prod-litems.orders-list .prod-li-add a:after {
-	background: url(../img/remove.png) no-repeat top left;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/remove_btsyub.png) no-repeat top left;
 }
 .prod-litems.orders-list .prod-li-add a:hover:after {
 	background-position: top left;
@@ -7707,7 +7707,7 @@ div.product.product-type-grouped .prod-add form.cart > .single_add_to_cart_butto
 .cart-actions .shipping .cart-shipping-ttl:after {
 	position: absolute;
 	content: '';
-	background: url(../img/arr1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/arr1_q6rikc.png) no-repeat left top;
 	display: block;
 	width: 14px;
 	height: 8px;
@@ -7758,7 +7758,7 @@ div.product.product-type-grouped .prod-add form.cart > .single_add_to_cart_butto
 	top: 4px;
 	left: 0;
 	content: '';
-	background: url(../img/radio1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/radio1_ofvvkn.png) no-repeat left top;
 }
 .cart-actions .shipping ul#shipping_method li input[type=radio]:checked + label:after {
 	background-position: left bottom;
@@ -8051,7 +8051,7 @@ div.product.product-type-grouped .prod-add form.cart > .single_add_to_cart_butto
 	top: 4px;
 	left: 0;
 	content: '';
-	background: url(../img/radio1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/radio1_ofvvkn.png) no-repeat left top;
 }
 .woocommerce-cart .cart-collaterals .cart_totals table tr td li input[type=radio]:checked + label:after {
 	background-position: left bottom;
@@ -8300,7 +8300,7 @@ div.product.product-type-grouped .prod-add form.cart > .single_add_to_cart_butto
 	top: 4px;
 	left: 0;
 	content: '';
-	background: url(../img/radio1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/radio1_ofvvkn.png) no-repeat left top;
 }
 .woocommerce-checkout table.shop_table #shipping_method input[type=radio]:checked + label:after {
 	background-position: left bottom;
@@ -8349,7 +8349,7 @@ div.product.product-type-grouped .prod-add form.cart > .single_add_to_cart_butto
 	top: 4px;
 	left: 0;
 	content: '';
-	background: url(../img/radio1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/radio1_ofvvkn.png) no-repeat left top;
 }
 .woocommerce-checkout .woocommerce-checkout #payment ul.payment_methods li input[type=radio]:checked + label:after,
 .woocommerce-checkout #payment ul.payment_methods li input[type=radio]:checked + label:after {
@@ -8469,7 +8469,7 @@ div.product.product-type-grouped .prod-add form.cart > .single_add_to_cart_butto
 .woocommerce .woocommerce-form__label-for-checkbox span:after {
 	display: block;
 	content: '';
-	background: url(../img/chk1.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077503/cesarmaytashop/chk1_qycphg.png) no-repeat left top;
 	top: 0;
 	left: 0;
 	position: absolute;
@@ -9292,7 +9292,7 @@ ul.cont-sections li:after {
 }
 .fancybox-close.modal-form-close {
 	background-image: none;
-	background: url(../img/close3.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077504/cesarmaytashop/close3_w5iaas.png) no-repeat left top;
 	width: 16px;
 	height: 16px;
 	top: 13px;
@@ -10410,7 +10410,7 @@ body .aboutus-img {
 	content: "";
 	opacity: 0;
 	background: #6bc67c;
-	background: rgba(107, 198, 124, 0.95) url(../img/zoom.png) no-repeat center center;
+	background: rgba(107, 198, 124, 0.95) url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077507/cesarmaytashop/zoom_ukkm1w.png) no-repeat center center;
 	border-radius: 80px;
 }
 .about-gallery li a.about-video:before {
@@ -10517,7 +10517,7 @@ body .aboutus-img {
 	content: "";
 	opacity: 0;
 	background: #6bc67c;
-	background: rgba(107, 198, 124, 0.95) url(../img/zoom.png) no-repeat center center;
+	background: rgba(107, 198, 124, 0.95) url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077507/cesarmaytashop/zoom_ukkm1w.png) no-repeat center center;
 	border-radius: 80px;
 }
 #sb_instagram .sbi_type_image .sbi_photo_wrap:hover:before {
@@ -10656,7 +10656,7 @@ ul.multishop-gallery {
 	content: "";
 	opacity: 0;
 	background: #6bc67c;
-	background: rgba(107, 198, 124, 0.95) url(../img/zoom.png) no-repeat center center;
+	background: rgba(107, 198, 124, 0.95) url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077507/cesarmaytashop/zoom_ukkm1w.png) no-repeat center center;
 	border-radius: 80px;
 }
 .multishop-gallery li a.multishop-gallery-video:before {
@@ -10870,7 +10870,7 @@ p.multishop-gallery-more a.loading {
 }
 .fancybox-close.modal-form-close {
 	background-image: none;
-	background: url(../img/close3.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077504/cesarmaytashop/close3_w5iaas.png) no-repeat left top;
 	width: 16px;
 	height: 16px;
 	top: 13px;
@@ -10916,12 +10916,12 @@ p.multishop-gallery-more a.loading {
 .fancybox-prev.modal-prev span {
 	left: 23px;
 	background-image: none;
-	background: url(../img/fancybox-nav.png) no-repeat left top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077504/cesarmaytashop/fancybox-nav_vpy1nc.png) no-repeat left top;
 }
 .fancybox-next.modal-next span {
 	right: 23px;
 	background-image: none;
-	background: url(../img/fancybox-nav.png) no-repeat right top;
+	background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077504/cesarmaytashop/fancybox-nav_vpy1nc.png) no-repeat right top;
 }
 
 /*----------------------------------

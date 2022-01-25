@@ -128,14 +128,14 @@
 	.testimonials-list.style-1 .testimonials-i .testimonials-i-cont:before {
 		width: 27px;
 		height: 26px;
-		background: url(../img/testimonials-angle1.png) no-repeat left top;
+		background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/testimonials-angle1_e9grts.png) no-repeat left top;
 		top: 100%;
 		right: 33px;
 	}
 	.testimonials-list.style-1 .testimonials-i:nth-child(2n) .testimonials-i-cont:before {
 		left: 33px;
 		right: auto;
-		background: url(../img/testimonials-angle2.png) no-repeat left top;
+		background: url(https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077506/cesarmaytashop/testimonials-angle2_odrbzc.png) no-repeat left top;
 	}
 	.testimonials-list.style-1 .testimonials-i .testimonials-i-img {
 		left: auto;

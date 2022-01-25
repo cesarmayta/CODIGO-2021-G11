@@ -1,9 +1,9 @@
 django==3.2
 Pillow
-#para instalacion en heroku
+psycopg2
 dj-database-url
-pyscopg2
 python-decouple
 gunicorn
 whitenoise
+#IMAGENES
 cloudinary
