@@ -34,13 +34,13 @@ class PedidoPlatoSerializerPOST(serializers.ModelSerializer):
         fields = ['plato_id','pedidoplato_cant']
         
 class PedidoSerializerPOST(serializers.ModelSerializer):
-    PedidoPlatos = PedidoPlatoSerializerPOST(many=True)
+    pedidoplatos = PedidoPlatoSerializerPOST(many=True)
     class Meta:
         model = Pedido
-        fields = ['pedido_fech','pedido_nro','pedido_est','usu_id','mesa_id','PedidoPlatos']
+        fields = ['pedido_fech','pedido_nro','pedido_est','usu_id','mesa_id','pedidoplatos']
         
     def create(self,validated_data):
-        pedidos_data = validated_data.pop('PedidoPlatos')
+        pedidos_data = validated_data.pop('pedidoplatos')
         pedido = Pedido.objects.create(**validated_data)
         for pedido_data in pedidos_data:
             PedidoPlato.objects.create(pedido_id=pedido,**pedido_data)

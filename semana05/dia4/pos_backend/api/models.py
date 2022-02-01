@@ -48,10 +48,10 @@ class Pedido(models.Model):
 class PedidoPlato(models.Model):
     pedidoplato_id = models.AutoField(primary_key=True)
     pedidoplato_cant = models.IntegerField(default=1)
-    plato_id = models.ForeignKey(Plato,related_name='PedidoPlatos',to_field='plato_id',
+    plato_id = models.ForeignKey(Plato,related_name='pedidoplatos',to_field='plato_id',
                                  on_delete=models.RESTRICT,db_column='plato_id',
                                  verbose_name='Plato')
-    pedido_id = models.ForeignKey(Pedido,related_name='PedidoPlatos',to_field='pedido_id',
+    pedido_id = models.ForeignKey(Pedido,related_name='pedidoplatos',to_field='pedido_id',
                                   on_delete=models.RESTRICT,db_column='pedido_id',
                                   verbose_name='Pedido')
     
