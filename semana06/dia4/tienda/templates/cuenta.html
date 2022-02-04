@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<main id="main" class="site-main">
+    <div class="cont maincont">
+        <h1 class="maincont-ttl">Cuenta de Cliente</h1>
+        <article class="page-cont">
+        <div class="page-styling">
+            <div class="auth-wrap">
+                <div class="auth-col">
+                    <h2>Datos de Cliente</h2>
+                    <h3>{{mensaje}}</h3>
+                    <form method="post" action="{% url 'tienda:actualizarCliente' %}" class="register">
+                        {% csrf_token %}
+                        {{ frmCliente.as_p }}
+                        <p class="auth-submit">
+                            <input type="submit" value="Actualizar">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </article>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="cont maincont">
+            <article>
+    <div class="prod">
+        <div class="prod-slider-wrap prod-slider-shown">
+            <div class="flexslider prod-slider" id="prod-slider">
+                <ul class="slides">
+                    <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; transition: opacity 0.5s ease 0s; z-index: 2;">
+                        <a data-fancybox-group="prod" class="fancy-img" href="http://placehold.it/810x722">
+                            <img src="{{ producto.imagen.url  }}" alt="" draggable="false">
+                        </a>
+                    </li>
+                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; transition: opacity 0.5s ease 0s; z-index: 1;">
+                        <a data-fancybox-group="prod" class="fancy-img" href="http://placehold.it/800x800">
+                            <img src="{{ producto.imagen.url  }}" alt="" draggable="false">
+                        </a>
+                    </li>
+                </ul>
+                <div class="prod-slider-count"><p><span class="count-cur">1</span> / <span class="count-all">2</span></p><p class="hover-label prod-slider-zoom"><i class="icon ion-search"></i><span>Zoom In</span></p></div>
+            <ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev flex-disabled" href="#" tabindex="-1">Previous</a></li><li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li></ul></div>
+            <div class="flexslider prod-thumbs" id="prod-thumbs">
+                
+            <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                    <li class="flex-active-slide" style="width: 114.4px; margin-right: 0px; float: left; display: block;">
+                        <img src="{{ producto.imagen.url  }}0" alt="" draggable="false">
+                    </li>
+                    <li style="width: 114.4px; margin-right: 0px; float: left; display: block;">
+                        <img src="{{ producto.imagen.url  }}" alt="" draggable="false">
+                    </li>
+                </ul></div>
+                <ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev flex-disabled" href="#" tabindex="-1">Previous</a></li><li class="flex-nav-next"><a class="flex-next flex-disabled" href="#" tabindex="-1">Next</a></li></ul></div>
+        </div>
+
+        <div class="prod-cont">
+            <p class="prod-categs">{{ producto.categoria.nombre }}</p>
+            <h1>{{ producto.nombre }}</h1>
+            <div class="variations_form cart">
+                <p class="prod-price">${{ producto.precio }}</p>
+                <p class="prod-excerpt">{{ producto.nombre }}</p>
+                <div class="prod-add">
+                    <a href="{% url 'tienda:agregarCarrito' producto.id %}" class="icon ion-android-cart">Agregar al Carrito</a>
+                    <p class="qnt-wrap prod-li-qnt">
+                        <a href="#" class="qnt-plus prod-li-plus"><i class="icon ion-arrow-up-b"></i></a>
+                        <input type="text" value="1">
+                        <a href="#" class="qnt-minus prod-li-minus"><i class="icon ion-arrow-down-b"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="prod-badge">
+            <span class="badge-1">TOP SELLER</span>
+        </p>
+    </div>
+
+</article>
+</div>
+
+
+
+{% endblock %}

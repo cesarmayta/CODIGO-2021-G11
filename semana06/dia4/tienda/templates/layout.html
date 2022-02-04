@@ -1,0 +1,148 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>MULTISHOP</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900%7COpen+Sans:300,300i,400,400i,600,600i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chosen.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements-media.css' %}">
+
+</head>
+<body>
+<div id="page" class="site">
+    <div class="container-fluid page-styling site-header-before">
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="links_list links_list-align-left align-center-desktop topbar-social">
+                    <li>
+                        <p class="links_list-value">
+                            <a href="http://facebook.com" target="_blank" rel="nofollow">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="links_list-value">
+                            <a href="mailto:email@email.com" target="_blank" rel="nofollow">
+                                <i class="fa fa-paper-plane"></i>
+                            </a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-8">
+                <ul class="links_list links_list-align-right align-center-desktop topbar-contacts">
+                    <li>
+                        <p class="links_list-label">
+                           Dirección
+                        </p>
+                        <p class="links_list-value">
+                            <a href="http://maps.google.com" target="_blank" rel="nofollow">Calle normal 123, Perú</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="links_list-label">
+                            Contactos
+                        </p>
+                        <p class="links_list-value">
+                            <a href="mailto:support@email.com">fashionstore@gmail.com</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="links_list-label">
+                            Telefono
+                        </p>
+                        <p class="links_list-value">
+                            <a href="tel:4785929899">(478)-592-9899</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="site-header">
+
+        <p class="h-logo">
+            <a href="{% url 'tienda:index' %}"><img src="https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077505/cesarmaytashop/logo_okxlai.png" alt="MultiShop"></a>
+        </p><!--
+    No Space
+    --><div class="h-shop">
+
+        <form method="get" action="#" class="h-search" id="h-search">
+            <input type="text" placeholder="Search...">
+            <button type="submit"><i class="ion-search"></i></button>
+        </form>
+
+    </div><!--
+    No Space
+    --><div class="mainmenu">
+
+        <nav id="h-menu" class="h-menu">
+            <ul>
+                <li>
+                    <a href="{% url 'tienda:loginUsuario' %}">LOGIN</a>
+                </li>
+                <li>
+                    <a href="{% url 'tienda:pedidos' %}">PEDIDOS</a>
+                </li>
+                <li>
+                    <a href="{% url 'tienda:logoutUsuario' %}">LOGOUT</a>
+                </li>
+                <li>
+                    <a href="{% url 'tienda:carrito' %}">CARRITO</a>
+                </li>
+                
+            </ul>
+        </nav>
+
+    </div><!--
+    No Space
+--></div>
+
+
+    <div id="content" class="site-content">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main">
+                <div class="cont maincont">
+                    <!-- To make Sidebar "Not Sticky" just remove  id="section-list-withsb" -->
+                    {%block content %}
+                    {% endblock %}
+                </div>
+            </main><!-- #main -->
+        </div><!-- #primary -->
+
+    </div><!-- #content -->
+
+    <div class="container-fluid blog-sb-widgets page-styling site-footer">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 widget align-center-tablet f-logo-wrap">
+                <a href="index.html" class="f-logo">
+                    <img src="https://res.cloudinary.com/dd9ad40qm/image/upload/v1643077505/cesarmaytashop/logo_okxlai.png" alt="">
+                </a>
+                <p>DEMO DE TIENDA ONLINE CON DJANGO</p>
+                <button class="btn callback">CONTRATAME</button>
+            </div>
+        </div>
+    </div>
+</div><!-- #page -->
+
+<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/jquery-plugins.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
