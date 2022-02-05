@@ -7,3 +7,4 @@ gunicorn
 whitenoise
 #IMAGENES
 cloudinary
+django-paypal

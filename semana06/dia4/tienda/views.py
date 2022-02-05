@@ -7,6 +7,9 @@ from django.contrib.auth.models import User
 from tienda.carrito import Cart
 from tienda.forms import ClienteForm
 
+### PAYPAL####
+from django.conf import settings
+from paypal.standard.forms import PayPalPaymentsForm
 
 # Create your views here.
 def index(request):
@@ -160,6 +163,8 @@ def registrarPedido(request):
         
         #REGISTRAMOS EL DETALLE DEL PEDIDO
         carritoPedido = request.session.get("cart")
+        totalPedido = 0
+       
         for key,value in carritoPedido.items():
             
             productoPedido = Producto.objects.get(pk=value["producto_id"])
@@ -169,12 +174,44 @@ def registrarPedido(request):
             nuevoPedidoDetalle.producto = productoPedido
             nuevoPedidoDetalle.cantidad = int(value["cantidad"])
             nuevoPedidoDetalle.save()
+            totalPedido += float(value["cantidad"]) * float(productoPedido.precio)
+            
+        nuevoPedido.total = totalPedido
+        nuevoPedido.save()
+        ## CREAMOS BOTON DE PAGO PARA PAYPAL
+        request.session['paypal_pid'] =  nuevoPedido.id
+        host = request.get_host()
+        paypal_datos = {
+            'business': settings.PAYPAL_RECEIVER_EMAIL,
+            'amount': totalPedido,
+            'item_name':'PEDIDO # ' + str(nuevoPedido.id),
+            'invoice': str(nuevoPedido.id),
+            'notify_url': 'http://' + host + '/' + 'paypal-ipn',
+            'return_url': 'http://' + host + '/' + 'pedidopagado'
+        }
         
+        formPedidoPaypal = PayPalPaymentsForm(initial=paypal_datos)
+        
+        context = {
+            'pedido':nuevoPedido,
+            'formpaypal':formPedidoPaypal
+        } 
         carrito = Cart(request)
         carrito.clear()
-        return redirect('/pedidos')
+        return render(request,'pago.html',context)
     else:
         return redirect('/login')
+
+    
+def pedidopagado(request):
+    pedidoID = request.session.get("paypal_pid")
+    print(pedidoID)
+    pedidoEditar = Pedido.objects.get(pk=pedidoID)
+    pedidoEditar.estado = 'pagado'
+    pedidoEditar.save()
+    
+    return redirect('/pedidos')
+    
     
 def pedidos(request):
     context = {}
