@@ -29,7 +29,7 @@ class PublicBookmarkView(APIView):
 
 class BookmarkView(APIView):
     
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     
     def get(self,request):
         BookmarkData = Bookmark.objects.all()
