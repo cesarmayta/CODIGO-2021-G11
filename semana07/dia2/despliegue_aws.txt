@@ -1,0 +1,28 @@
+#PASOS PARA DESPLIEGUE EN AWS
+1 - actualizar ubuntu e instalar librerias
+sudo apt update
+sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
+
+2 - CREAMOS LA BASE DE DATOS EN postgresql
+sudo -u postgres psql
+CREATE DATABASE shop;
+CREATE USER codigo WITH PASSWORD 'codigo2022';
+
+ALTER ROLE codigo SET client_encoding TO 'utf8';
+ALTER ROLE codigo SET default_transaction_isolation TO 'read committed';
+ALTER ROLE codigo SET timezone TO 'UTC';
+
+GRANT ALL PRIVILEGES ON DATABASE shop TO codigo;
+
+\q
+
+2 - CREAMOS ENTORNO VIRTUAL Y CONFIGURAMOS python3
+
+sudo apt install python3.8-venv
+source venv/bin/activate
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="section-wrap-withsb">
+    <aside class="blog-sb-widgets section-sb" id="section-sb">
+        <div class="theiaStickySidebar">
+            <p class="section-filter-toggle filter_hidden">
+                <a href="#" id="section-filter-toggle-btn">Show Filter</a>
+            </p>
+            <div class="section-filter">
+                <div class="section-filter">
+                    <div class="blog-sb-widget multishopcategories_widget">
+                        <h3 class="widgettitle">Categorias</h3>
+                        <div class="section-sb-current">
+                            <ul class="section-sb-list">
+                                {% for categoria in categorias %} 
+                                <li>
+                                    <a href="{% url 'tienda:productosPorCategoria' categoria.id  %}"><span class="section-sb-label">{{ categoria.nombre }} <span class="count">{{ categoria.producto_set.all.count}}</span></span></a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>        <div class="section-list-withsb" id="section-list-withsb">
+    <div class="theiaStickySidebar">
+        
+        <div class="row prod-items prod-items-2">
+            {% for producto in productos %}
+            <article class="cf-sm-6 cf-md-6 cf-lg-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 sectgl-item">
+                <div class="sectgl prod-i">
+                    <div class="prod-i-top">
+                        <a class="prod-i-img" href="{% url 'tienda:producto' producto.id  %}">
+                            <img src="{{ producto.imagen.url }}" alt="">
+                        </a>
+                    </div>
+                    <div class="prod-i-bot">
+                        <div class="prod-i-info">
+                            <p class="prod-i-price">${{ producto.precio }}</p>
+                            <p class="prod-i-categ"><a href="catalog-gallery.html">{{ producto.categoria.nombre }}</a></p>
+                        </div>
+                        <h3 class="prod-i-ttl"><a href="{% url 'tienda:producto' producto.id  %}">{{ producto.nombre }}</a></h3>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}            
+        
+        </div>
+        <ul class="page-numbers">
+            <li><span class="page-numbers current">1</span></li>
+            <li><a class="next page-numbers" href="#"><i class="fa fa-angle-right"></i></a></li>
+        </ul>
+    </div><!-- .theiaStickySidebar -->
+</div><!-- .section-list-withsb -->
+</div><!-- .section-wrap-withsb -->
+
+{% endblock %}
