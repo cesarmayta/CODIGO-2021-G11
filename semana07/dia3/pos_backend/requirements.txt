@@ -1,0 +1,7 @@
+django==3.2
+djangorestframework
+cloudinary
+python-decouple
+django-cors-headers
+djangorestframework-simplejwt
+psycopg2
