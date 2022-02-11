@@ -4,14 +4,14 @@ Requires=gunicorn.socket
 After=network.target
 
 [Service]
-User=ubuntu
+User=codigo
 Group=www-data
-WorkingDirectory=/home/ubuntu/pos_backend
-ExecStart=/home/ubuntu/venv/bin/gunicorn \
+WorkingDirectory=/home/codigo/pos_backend
+ExecStart=/home/codigo/venv/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
-          shop.wsgi:application
+          pos_backend.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
