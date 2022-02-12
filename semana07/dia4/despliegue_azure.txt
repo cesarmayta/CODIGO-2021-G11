@@ -36,7 +36,7 @@ gunicorn --bind 0.0.0.0:8000 shop.wsgi
 2 - copiar los archivos al servidor
 primero se debe subir por git y hacer git pull en el servidor
 
-ingresamos a la carpeta awsconf
+ingresamos a la carpeta serverconf
 
 sudo cp gunicorn.socket /etc/systemd/system/gunicorn.socket
 

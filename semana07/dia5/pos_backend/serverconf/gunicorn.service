@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=codigo
+Group=www-data
+WorkingDirectory=/home/codigo/pos_backend
+ExecStart=/home/codigo/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          pos_backend.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
