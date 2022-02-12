@@ -1,0 +1,172 @@
+swagger: '2.0'
+info:
+  title: SISTEMA POS API
+  description: api rest de sistema pos
+  termsOfService: https://www.google.com/policies/terms/
+  contact:
+    email: cesarmayta@gmail.com
+  license:
+    name: MIT
+  version: v1
+host: localhost:8000
+schemes:
+  - http
+basePath: /
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  Basic:
+    type: basic
+security:
+  - Basic: []
+paths:
+  /:
+    get:
+      operationId: _list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - ''
+    parameters: []
+  /api/token/refresh/:
+    post:
+      operationId: api_token_refresh_create
+      description: |-
+        Takes a refresh type JSON web token and returns an access type JSON web
+        token if the refresh token is valid.
+      parameters:
+        - name: data
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/TokenRefresh'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/TokenRefresh'
+      tags:
+        - api
+    parameters: []
+  /categoria:
+    get:
+      operationId: categoria_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - categoria
+    parameters: []
+  /categoria/{categoria_id}/platos:
+    get:
+      operationId: categoria_platos_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - categoria
+    parameters:
+      - name: categoria_id
+        in: path
+        required: true
+        type: string
+  /login:
+    post:
+      operationId: login_create
+      description: |-
+        Takes a set of user credentials and returns an access and refresh JSON web
+        token pair to prove the authentication of those credentials.
+      parameters:
+        - name: data
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/TokenObtainPair'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/TokenObtainPair'
+      tags:
+        - login
+    parameters: []
+  /mesa:
+    get:
+      operationId: mesa_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - mesa
+    parameters: []
+  /pedido:
+    get:
+      operationId: pedido_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - pedido
+    post:
+      operationId: pedido_create
+      description: ''
+      parameters: []
+      responses:
+        '201':
+          description: ''
+      tags:
+        - pedido
+    parameters: []
+  /plato:
+    get:
+      operationId: plato_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - plato
+    parameters: []
+definitions:
+  TokenRefresh:
+    required:
+      - refresh
+    type: object
+    properties:
+      refresh:
+        title: Refresh
+        type: string
+        minLength: 1
+      access:
+        title: Access
+        type: string
+        readOnly: true
+        minLength: 1
+  TokenObtainPair:
+    required:
+      - username
+      - password
+    type: object
+    properties:
+      username:
+        title: Username
+        type: string
+        minLength: 1
+      password:
+        title: Password
+        type: string
+        minLength: 1

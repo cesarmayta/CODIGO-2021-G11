@@ -1,0 +1,11 @@
+1 - instalar un contenedor de prueba
+sudo docker pull hello-world
+sudo docker run hello-world
+2 - verificamos que este levantado
+docker ps
+3 - verificar estado de docker
+sudo service docker status
+4 - instalamso postgres con docker
+sudo docker pull postgres
+sudo docker run --name codigog11 -e POSTGRES_PASSWORD=codigo2022 -d postgres
+sudo docker run -it postgres psql -h localhost -U postgres
