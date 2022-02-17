@@ -19,6 +19,7 @@ app.get('/saludar/:nombre',function(req,res){
     res.send("HOLA " + req.params.nombre)
 })
 
+///////////////// FORMULARIO CON METODO POST //////////////
 app.get('/formulario',function(req,res){
     html = "<form action='http://localhost:5000/saludopost' method='POST'>"
     html += "<input type='text' name='nombre'/>"
@@ -34,6 +35,16 @@ app.post('/saludopost',function(req,res){
     html = "<H1>HOLA COMO ESTAS " + req.body.nombre + "</H1>"
     res.send(html)
 })
+///////////////////////////////////////////////////////////////////
+// UTILIZANDO JSON
+app.use(express.json());
+app.post('/saludopostjson',function(req,res){
+    const nombre = req.body.nombre;
+    res.json({
+        'saludo':'hola ' + nombre
+    })
+})
+
 
 app.listen(port,function(){
     console.log('Servidor corriendo en http://localhost:' + port)

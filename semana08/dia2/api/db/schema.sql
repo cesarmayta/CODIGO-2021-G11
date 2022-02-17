@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS company;
+
+USE company;
+
+CREATE TABLE employee(
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) DEFAULT NULL,
+    salary INT(11) DEFAULT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO employee(name,salary) VALUES
+    ('CESAR MAYTA',7000),
+    ('ESTEFANY LOPEZ',10000),
+    ('LUIS ARENAS',5000);
+
