@@ -47,9 +47,11 @@ app.post('/employee',function(req,res){
 app.put('/employee/:id',function(req,res){
     const {name,salary} = req.body;
     const {id} = req.params;
-    const query = "update employee set name=?,salary=? where id=?"
+    const query = `update employee set
+                  name=?,salary=? where id=?`
 
-    mysqlConnection.query(query,[name,salary,id],(err,rows,fields)=>{
+    mysqlConnection.query(query,[name,salary,id],
+        (err,rows,fields)=>{
         if(!err){
             res.json({
                 'status':true,
@@ -63,9 +65,11 @@ app.put('/employee/:id',function(req,res){
 
 app.delete('/employee/:id',function(req,res){
     const {id} = req.params;
-    const query = "delete from employee where id=?"
+    const query = `delete from employee 
+                    where id=?`
 
-    mysqlConnection.query(query,[id],(err,rows,fields)=>{
+    mysqlConnection.query(query,[id],
+        (err,rows,fields)=>{
         if(!err){
             res.json({
                 'status':true,
