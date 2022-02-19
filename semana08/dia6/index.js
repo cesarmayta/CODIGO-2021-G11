@@ -3,6 +3,7 @@ const app = express();
 
 const { config } = require('./config');
 
+
 //middlewares
 app.use(express.json());
 
@@ -12,6 +13,10 @@ app.get("/",(req,res)=>{
         content:'SERVIDOR CORRIENDO'
     })
 })
+
+//agregamos rutas de alumnos
+const alumnosApi = require('./routes/alumnos');
+alumnosApi(app);
 
 app.listen(config.port,function(){
     console.log(`Servidor corriendo en http://localhost:${config.port}`);
