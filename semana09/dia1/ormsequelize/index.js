@@ -14,10 +14,13 @@ app.listen(port,()=>console.log(`servidor corriendo en http://localhost:${port}`
 /*************** TRABAJANDO CON SEQUELIZE ***************/
 const  Sequelize = require('sequelize');
 
+
 const sequelize = new Sequelize({
     dialect:'sqlite',
     storage:'./database.sqlite'
 })
+
+
 
 sequelize.authenticate()
 .then(()=>{
@@ -28,6 +31,7 @@ sequelize.authenticate()
 })
 
 ///creamos modelos
+
 const Alumnos = sequelize.define(
     'alumnos',
     {
@@ -36,7 +40,7 @@ const Alumnos = sequelize.define(
     }
 )
 //migración de modelos
-/*
+
 sequelize.sync({force:true})
 .then(()=>{
     console.log("tablas migradas");
@@ -52,7 +56,7 @@ sequelize.sync({force:true})
             console.log(alumnos);
         })
 })
-*/
+
 /**************** CREAMOS LOS ENDPOINTS **********/
 app.get('/alumnos',(req,res)=>{
     Alumnos.findAll()
