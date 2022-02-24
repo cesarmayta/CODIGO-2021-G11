@@ -1,0 +1,6 @@
+paso 1 - creamos proyecto con yarn
+npx create-react-app@5.0.0 frontend yarn
+
+paso2 - instalamos dependencias
+yarn add axios
+yarn add react-bootstrap bootstrap@5.1.3
