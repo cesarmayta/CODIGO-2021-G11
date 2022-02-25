@@ -1,6 +1,7 @@
 const alumnoController = {};
 
 const alumnoModel = require('../models/alumnos');
+const boom = require('@hapi/boom');
 
 alumnoController.getAll = async (req,res)=>{
     const alumnos = await alumnoModel.find();
@@ -18,6 +19,14 @@ alumnoController.create = async (req,res) =>{
         status:true,
         content:'alumno creado con exito'
     })
+}
+
+alumnoController.getById = async (req,res,next) =>{
+    try{
+        throw new Error('es es mi error de prueba')
+    }catch(err){
+        next(err);
+    }
 }
 
 module.exports = alumnoController;
