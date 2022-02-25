@@ -33,7 +33,12 @@ app.get("/usuario",(req,res)=>{
     })
 })
 
+
 //MIDDLEWARE PARA ERRORES
+app.use(function(err,req,res,next){
+    res.json(boom.badImplementation())
+})
+
 app.use(function(err,req,res,next){
     console.error(err.stack);
     res.status(500).json({
