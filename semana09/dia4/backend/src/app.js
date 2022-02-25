@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const {config} = require('./config');
 
-const {errorHandler,metodo,logErrors} = require('./middlewares/error.handler');
+const {errorHandler,metodo,logErrors,boomErrorHandler} = require('./middlewares/error.handler');
 
 const app = express();
 
@@ -22,6 +22,7 @@ app.use('/alumnos',require('./routes/alumnos'));
 
 //handlers
 app.use(logErrors);
+app.use(boomErrorHandler);
 app.use(errorHandler);
 
 module.exports = app;

@@ -23,7 +23,12 @@ alumnoController.create = async (req,res) =>{
 
 alumnoController.getById = async (req,res,next) =>{
     try{
-        throw new Error('es es mi error de prueba')
+        const alumno = await alumnoModel.findById(req.params.id);
+        if(!alumno){
+            res.json(boom.notFound('alumno no existe'))
+        }
+        res.json(alumno);
+        //throw new Error('es es mi error de prueba')
     }catch(err){
         next(err);
     }
