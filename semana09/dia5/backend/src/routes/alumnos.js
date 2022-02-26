@@ -4,9 +4,10 @@ const router = Router();
 const {getAll,create,getById} = require('../controllers/alumnos');
 const validatorHandler = require('../middlewares/validator.handler');
 const {createAlumnoSchema} = require('../schemas/alumnos');
+const auth = require('../middlewares/auth');
 
 router.route('/')
-    .get(getAll)
+    .get(auth,getAll)
     .post(validatorHandler(createAlumnoSchema,'body'),create)
 
 router.route('/:id')

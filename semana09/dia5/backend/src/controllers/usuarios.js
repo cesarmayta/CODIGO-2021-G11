@@ -4,7 +4,8 @@ const usuarioModel = require('../models/usuarios');
 const boom = require('@hapi/boom');
 const jwt = require('jsonwebtoken');
 const {config} = require('../config');
-const { restart } = require('nodemon');
+
+const bcrypt = require('bcryptjs');
 
 usuarioController.getAll = async (req,res)=>{
     const usuarios = await usuarioModel.find();
@@ -14,9 +15,13 @@ usuarioController.getAll = async (req,res)=>{
 usuarioController.create = async (req,res) =>{
     const {usuario,password} = req.body;
 
+    //encriptamos el password
+    passwordEncriptado = await bcrypt.hash(password,10);
+    console.log("password encriptado : ",passwordEncriptado)
+
     const nuevousuario = new usuarioModel({
-        usuario,
-        password
+        usuario:usuario,
+        password:passwordEncriptado
     })
     await nuevousuario.save();
 
@@ -41,7 +46,7 @@ usuarioController.login = async (req,res) =>{
     //buscamos si existe un usuario con el valor enviado
     const loginUsuario = await usuarioModel.findOne({usuario});
 
-    if(loginUsuario && loginUsuario.password == password){
+    if(loginUsuario && (await bcrypt.compare(password,loginUsuario.password))){
         const token = jwt.sign(
             {usu_id: loginUsuario._id,usu_name: loginUsuario.usuario},
             config.secret_key,
