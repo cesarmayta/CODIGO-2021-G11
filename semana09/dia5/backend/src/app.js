@@ -20,10 +20,17 @@ app.get('/',(req,res)=>res.json({content:'api ok'}))
 // vista alumnos
 app.use('/alumnos',require('./routes/alumnos'));
 
+//vista de usuarios
+app.use('/usuarios',require('./routes/usuarios'));
+
 //handlers
-app.use(logErrors);
-app.use(boomErrorHandler);
+//app.use(logErrors);
+//app.use(boomErrorHandler);
 app.use(errorHandler);
+
+var jwt = require('jsonwebtoken');
+var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
+console.log("token de prueba : ",token)
 
 module.exports = app;
 

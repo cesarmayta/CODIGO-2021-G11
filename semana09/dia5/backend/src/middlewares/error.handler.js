@@ -1,4 +1,5 @@
 function metodo(req,res,next){
+    console.log('ruta : ',req.originalUrl)
     console.log('tipo de request: ',req.method)
     next();
 }
