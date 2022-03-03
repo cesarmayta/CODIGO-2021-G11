@@ -1,0 +1,9 @@
+#PASOS PARA DESPLEGAR PROYECTO
+
+#DJANGO
+_python -m venv venv
+_source venv/scripts/activate
+_pip install -r requirements.txt
+_python manage.py migrate
+_python manage.py createsuperuser
+_python manage.py runserver
