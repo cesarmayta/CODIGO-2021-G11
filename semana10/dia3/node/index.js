@@ -75,8 +75,8 @@ sequelize.sync({force:true})
     console.log("tablas migradas")
     Project.bulkCreate(
         [
-            {id:1,name:'tiendatech'},
-            {id:2,name:'proyecto final'}
+            {name:'tiendatech'},
+            {name:'proyecto final'}
         ]).then(function(){
             return Project.findAll();
         }).then(function(proyectos){
