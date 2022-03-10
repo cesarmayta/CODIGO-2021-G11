@@ -2,7 +2,12 @@
 -- Tue Nov  2 20:53:20 2021
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
-
+CREATE TABLE IF NOT EXISTS `tbl_usuario` (
+  `usuario_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `usuario_nom` varchar(255) DEFAULT NULL,
+  `usuario_pas` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`usuario_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
 -- -----------------------------------------------------
 -- Table `tbl_categoria`
 -- -----------------------------------------------------
