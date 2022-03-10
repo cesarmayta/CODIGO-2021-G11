@@ -1,5 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
+app.use(cors());
 
 app.set('port',process.env.PORT || 5000);
 
@@ -25,5 +28,9 @@ io.on('connection',(socket)=>{
     socket.on('mensajecliente',(data)=>{
         console.log('mensaje de cliente :',data);
         io.sockets.emit('mensajeservidor',data)
+    })
+    socket.on('usuario',(usu) =>{
+        usuario = usu;
+        console.log("usuario conectado : ",usuario);
     })
 })
